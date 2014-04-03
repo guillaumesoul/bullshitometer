@@ -19,8 +19,19 @@
 }
 
 /*METER*/
+.meter-container{
+    text-align: center;
+}
+
 .meter{
-    background: red;
+    width: 80%;
+    background-image:-webkit-linear-gradient(left, red, green);
+    margin: 0 auto;
+    margin-top: 10px;
+    height: 30px;
+    line-height: 50px;
+    border: solid;
+    opacity: 0.8;
 }
 
 /*LIGNES DE BOUTONS*/
