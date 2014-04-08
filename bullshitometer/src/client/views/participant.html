@@ -1,0 +1,40 @@
+<template name="participant">
+    <span>participant N°1</span><br>
+    <div id="1">
+        <input type="hidden" class="participantNumber" id="participantNumber1" value="1"/>
+        {{> bullshitometer}}
+        {{> buttonLine}}
+    </div>
+    <div id="2">
+        <span>participant N°2</span><br>
+        <input type="hidden" class="participantNumber" id="participantNumber2" value="2"/>
+        {{> bullshitometer}}
+        {{> buttonLine}}
+    </div>
+    <div id="3">
+        <span>participant N°3</span><br>
+        <input type="hidden" class="participantNumber" id="participantNumber3" value="3"/>
+        {{> bullshitometer}}
+        {{> buttonLine}}
+    </div>
+</template>
+
+
+<template name="bullshitometer">
+    <div class="meter-container">
+        <div class="meter">
+        </div>
+    </div>
+</template>
+
+
+<template name="buttonLine">
+    <div class="button-line">
+        <button type="button" class="red" id="bullshit">BULLSHIT!</button>
+        <button type="button" class="orange" id="dontAgree">DON'T AGREE</button>
+        <button type="button" class="yellow" id="moreOrLess">MORE OR LESS</button>
+        <button type="button" class="light-green" id="quiteTrue">QUITE TRUE</button>
+        <button type="button" class="green" id="damnRight">DAMN RIGHT!</button>
+    </div>
+</template>
+
