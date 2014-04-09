@@ -1,31 +1,46 @@
 <template name="participant">
-    <span>participant N°1</span><br>
+    <span id="participant1">participant N°1</span><br>
     <div id="1">
-        <input type="hidden" class="participantNumber" id="participantNumber1" value="1"/>
-        {{> bullshitometer}}
+        {{> bullshitometer1}}
         {{> buttonLine}}
     </div>
     <div id="2">
-        <span>participant N°2</span><br>
-        <input type="hidden" class="participantNumber" id="participantNumber2" value="2"/>
-        {{> bullshitometer}}
+        <span id="participant2">participant N°2</span><br>
+        {{> bullshitometer2}}
         {{> buttonLine}}
     </div>
     <div id="3">
-        <span>participant N°3</span><br>
-        <input type="hidden" class="participantNumber" id="participantNumber3" value="3"/>
-        {{> bullshitometer}}
+        <span id="participant3">participant N°3</span><br>
+        {{> bullshitometer3}}
         {{> buttonLine}}
     </div>
 </template>
 
 
-<template name="bullshitometer">
+<template name="bullshitometer1">
     <div class="meter-container">
         <div class="meter">
-            note : {{averageNote}}
+            note : {{averageNote1}} %
         </div>
-        <div>{{averageNote}}</div>
+        <meter optimum="1" value="{{averageNote1}}">60%</meter>
+    </div>
+</template>
+
+<template name="bullshitometer2">
+    <div class="meter-container">
+        <div class="meter">
+            note : {{averageNote2}} %
+        </div>
+        <meter value="{{averageNote2}}">60%</meter>
+    </div>
+</template>
+
+<template name="bullshitometer3">
+    <div class="meter-container">
+        <div class="meter">
+            note : {{averageNote3}} %
+        </div>
+        <meter value="{{averageNote3}}">60%</meter>
     </div>
 </template>
 

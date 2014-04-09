@@ -1,12 +1,31 @@
-Template.bullshitometer.helpers({
-    averageNote: function() {
-        return
-        //return 'coucou';
+Template.bullshitometer1.helpers({
+    averageNote1: function() {
+        var $parentdiv = $('#participant1');
+        var participantActif = Participants.find({participant: "1"}).fetch();
+        var averageNote = _.pluck(participantActif, 'averageNote');
+        averageNote = Math.round(averageNote*100)/100;
+        return averageNote/100;
     }
-/*    averageNote: function() {
-        return ('coucou');
-        *//*return Participant.find({slideshowId: this._id});*//*
-    }*/
+})
+
+Template.bullshitometer2.helpers({
+    averageNote2: function() {
+        var $parentdiv = $('#participant2');
+        var participantActif = Participants.find({participant: "2"}).fetch();
+        var averageNote = _.pluck(participantActif, 'averageNote');
+        averageNote = Math.round(averageNote*100)/100;
+        return averageNote/100;
+    }
+})
+
+Template.bullshitometer3.helpers({
+    averageNote3: function() {
+        var $parentdiv = $('#participant3');
+        var participantActif = Participants.find({participant: "3"}).fetch();
+        var averageNote = _.pluck(participantActif, 'averageNote');
+        averageNote = Math.round(averageNote*100)/100;
+        return averageNote/100;
+    }
 })
 
 Template.buttonLine.events({
@@ -15,7 +34,6 @@ Template.buttonLine.events({
         //get the div element containing the button
         var $parentDiv = $(e.target).parent().parent();
         var $idParentDiv = $parentDiv.attr('id');
-        console.log('id de la div parent : '+$idParentDiv);
 
         Notes.insert({
             participant: $idParentDiv,
@@ -32,7 +50,7 @@ Template.buttonLine.events({
         //Récupération de l'id du participant
         var participantActif = Participants.findOne({participant: $idParentDiv})._id;
         //update the average note of the participant in the participants collection
-        console.log('update participant');
+        console.log('update participant average note');
         Participants.update(
             {_id: participantActif},
             {$set: {
@@ -60,7 +78,7 @@ Template.buttonLine.events({
 
         var participantActif = Participants.findOne({participant: $idParentDiv})._id;
         //update the average note of the participant in the participants collection
-        console.log('update participant');
+        console.log('update participant average note');
         Participants.update(
             {_id: participantActif},
             {$set: {
@@ -88,7 +106,7 @@ Template.buttonLine.events({
 
         var participantActif = Participants.findOne({participant: $idParentDiv})._id;
         //update the average note of the participant in the participants collection
-        console.log('update participant');
+        console.log('update participant average note');
         Participants.update(
             {_id: participantActif},
             {$set: {
@@ -116,7 +134,7 @@ Template.buttonLine.events({
 
         var participantActif = Participants.findOne({participant: $idParentDiv})._id;
         //update the average note of the participant in the participants collection
-        console.log('update participant');
+        console.log('update participant average note');
         Participants.update(
             {_id: participantActif},
             {$set: {
@@ -144,7 +162,7 @@ Template.buttonLine.events({
 
         var participantActif = Participants.findOne({participant: $idParentDiv})._id;
         //update the average note of the participant in the participants collection
-        console.log('update participant');
+        console.log('update participant average note');
         Participants.update(
             {_id: participantActif},
             {$set: {
