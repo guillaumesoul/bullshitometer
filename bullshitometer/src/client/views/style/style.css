@@ -29,9 +29,11 @@
     margin: 0 auto;
     margin-top: 10px;
     height: 30px;
-    line-height: 50px;
-    border: solid;
+    line-height: 30px;
     opacity: 0.8;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
 }
 
 /*LIGNES DE BOUTONS*/

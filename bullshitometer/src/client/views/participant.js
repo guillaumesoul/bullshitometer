@@ -1,20 +1,45 @@
+Template.bullshitometer.helpers({
+    averageNote: function() {
+        return
+        //return 'coucou';
+    }
+/*    averageNote: function() {
+        return ('coucou');
+        *//*return Participant.find({slideshowId: this._id});*//*
+    }*/
+})
+
 Template.buttonLine.events({
     'click button.red': function(e) {
         e.preventDefault();
         //get the div element containing the button
         var $parentDiv = $(e.target).parent().parent();
         var $idParentDiv = $parentDiv.attr('id');
+        console.log('id de la div parent : '+$idParentDiv);
 
         Notes.insert({
             participant: $idParentDiv,
             note: 0,
             date: new Date()
         })
-
+        //get all the notes of the participant
         var notes = Notes.find({participant: $idParentDiv},{note:1,_id:0}).fetch();
+        //transform the array of object into an array of element
         var notesArray = _.pluck(notes,'note');
+        //calculate the average note with the avg method in participant.js
         var average = notesArray.avg();
         console.log('moyenne du participant N°'+$idParentDiv+' = '+average);
+        //Récupération de l'id du participant
+        var participantActif = Participants.findOne({participant: $idParentDiv})._id;
+        //update the average note of the participant in the participants collection
+        console.log('update participant');
+        Participants.update(
+            {_id: participantActif},
+            {$set: {
+                averageNote: average
+            }
+            }
+        )
     },
 
     'click button.orange': function(e) {
@@ -32,6 +57,17 @@ Template.buttonLine.events({
         var notesArray = _.pluck(notes,'note');
         var average = notesArray.avg();
         console.log('moyenne du participant N°'+$idParentDiv+' = '+average);
+
+        var participantActif = Participants.findOne({participant: $idParentDiv})._id;
+        //update the average note of the participant in the participants collection
+        console.log('update participant');
+        Participants.update(
+            {_id: participantActif},
+            {$set: {
+                averageNote: average
+            }
+            }
+        )
     },
 
     'click button.yellow': function(e) {
@@ -49,6 +85,17 @@ Template.buttonLine.events({
         var notesArray = _.pluck(notes,'note');
         var average = notesArray.avg();
         console.log('moyenne du participant N°'+$idParentDiv+' = '+average);
+
+        var participantActif = Participants.findOne({participant: $idParentDiv})._id;
+        //update the average note of the participant in the participants collection
+        console.log('update participant');
+        Participants.update(
+            {_id: participantActif},
+            {$set: {
+                averageNote: average
+            }
+            }
+        )
     },
 
     'click button.light-green': function(e) {
@@ -66,6 +113,17 @@ Template.buttonLine.events({
         var notesArray = _.pluck(notes,'note');
         var average = notesArray.avg();
         console.log('moyenne du participant N°'+$idParentDiv+' = '+average);
+
+        var participantActif = Participants.findOne({participant: $idParentDiv})._id;
+        //update the average note of the participant in the participants collection
+        console.log('update participant');
+        Participants.update(
+            {_id: participantActif},
+            {$set: {
+                averageNote: average
+            }
+            }
+        )
     },
 
     'click button.green': function(e) {
@@ -83,6 +141,17 @@ Template.buttonLine.events({
         var notesArray = _.pluck(notes,'note');
         var average = notesArray.avg();
         console.log('moyenne du participant N°'+$idParentDiv+' = '+average);
+
+        var participantActif = Participants.findOne({participant: $idParentDiv})._id;
+        //update the average note of the participant in the participants collection
+        console.log('update participant');
+        Participants.update(
+            {_id: participantActif},
+            {$set: {
+                averageNote: average
+            }
+            }
+        )
     }
 });
 
