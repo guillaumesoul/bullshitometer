@@ -23,9 +23,9 @@
     text-align: center;
 }
 
-.meter{
-    width: 80%;
-    background-image:-webkit-linear-gradient(left, red, green);
+.meterInfo{
+    width: 500px;
+    background-image:-webkit-linear-gradient(left, #FA5858, #80C47B);
     margin: 0 auto;
     margin-top: 10px;
     height: 30px;
@@ -38,9 +38,13 @@
     border-color: black;
 }
 
+.voteNumber{
+    float: left;
+    margin-left: 20px;
+}
+
 meter{
     width: 700px;
-    background-image:-webkit-linear-gradient(left, red, green);
     margin: 0 auto;
     margin-top: 10px;
     height: 30px;
@@ -53,35 +57,6 @@ meter{
     border-color: black;
     -webkit-appearance: none;
 }
-
-meter::-webkit-meter-optimum-value {
-    box-shadow: 0 5px 5px -5px #999 inset;
-    background-image: linear-gradient(
-        90deg,
-        red 0%,
-        green 100%
-    );
-    /*background-size: 100% 100%;*/
-    background-size: 100%;
-}
-
-/*meter::-webkit-meter-optimum-value {
-    box-shadow: 0 5px 5px -5px #999 inset;
-    background-image: linear-gradient(
-        90deg,
-        #8bcf69 5%,
-        #e6d450 15%,
-        #e6d450 25%,
-        #f28f68 35%,
-        #f28f68 45%,
-        #cf82bf 55%,
-        #cf82bf 65%,
-        #719fd1 75%,
-        #719fd1 100%
-    );
-    *//*background-size: 100% 100%;*//*
-    background-size: 100%;
-}*/
 
 
 /*LIGNES DE BOUTONS*/

@@ -4,7 +4,11 @@ Template.bullshitometer1.helpers({
         var participantActif = Participants.find({participant: "1"}).fetch();
         var averageNote = _.pluck(participantActif, 'averageNote');
         averageNote = Math.round(averageNote*100)/100;
-        return averageNote/100;
+        return averageNote;
+    },
+    voteNumber: function() {
+        var voteNumber = Notes.find({participant: "1"}).count();
+        return voteNumber;
     }
 })
 
@@ -14,7 +18,11 @@ Template.bullshitometer2.helpers({
         var participantActif = Participants.find({participant: "2"}).fetch();
         var averageNote = _.pluck(participantActif, 'averageNote');
         averageNote = Math.round(averageNote*100)/100;
-        return averageNote/100;
+        return averageNote;
+    },
+    voteNumber: function() {
+        var voteNumber = Notes.find({participant: "2"}).count();
+        return voteNumber;
     }
 })
 
@@ -24,7 +32,11 @@ Template.bullshitometer3.helpers({
         var participantActif = Participants.find({participant: "3"}).fetch();
         var averageNote = _.pluck(participantActif, 'averageNote');
         averageNote = Math.round(averageNote*100)/100;
-        return averageNote/100;
+        return averageNote;
+    },
+    voteNumber: function() {
+        var voteNumber = Notes.find({participant: "3"}).count();
+        return voteNumber;
     }
 })
 

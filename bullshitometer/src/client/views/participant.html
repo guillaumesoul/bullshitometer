@@ -19,28 +19,32 @@
 
 <template name="bullshitometer1">
     <div class="meter-container">
-        <div class="meter">
-            note : {{averageNote1}} %
+        <div class="meterInfo">
+            <span class="participantNote">{{averageNote1}} %</span>
+            <span class="voteNumber">{{voteNumber}} votes</span>
         </div>
-        <meter optimum="1" value="{{averageNote1}}">60%</meter>
+        <meter max="100" low="33" high="67" optimum="100" value="{{averageNote1}}">{{averageNote1}} %</meter>
+
     </div>
 </template>
 
 <template name="bullshitometer2">
     <div class="meter-container">
-        <div class="meter">
-            note : {{averageNote2}} %
+        <div class="meterInfo">
+            <span class="participantNote">{{averageNote2}} %</span>
+            <span class="voteNumber">{{voteNumber}} votes</span>
         </div>
-        <meter value="{{averageNote2}}">60%</meter>
+        <meter max="100" low="33" high="67" optimum="100" value="{{averageNote2}}">{{averageNote2}} %</meter>
     </div>
 </template>
 
 <template name="bullshitometer3">
     <div class="meter-container">
-        <div class="meter">
-            note : {{averageNote3}} %
+        <div class="meterInfo">
+            <span class="participantNote">{{averageNote3}} %</span>
+            <span class="voteNumber">{{voteNumber}} votes</span>
         </div>
-        <meter value="{{averageNote3}}">60%</meter>
+        <meter max="100" low="33" high="67" optimum="100" value="{{averageNote3}}">{{averageNote3}} %</meter>
     </div>
 </template>
 
