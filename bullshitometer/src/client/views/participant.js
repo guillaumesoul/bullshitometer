@@ -131,24 +131,24 @@ Template.buttonLine.events({
     'click button.light-green': function(e) {
         e.preventDefault();
         var $parentDiv = $(e.target).parent().parent();
-        var $idParentDiv = $parentDiv.attr('id');
+        var $idParticipant = $parentDiv.attr('id');
 
         Notes.insert({
-            participant: $idParentDiv,
+            participant: $idParticipant,
             note: 75,
             date: new Date()
         })
 
-        var notes = Notes.find({participant: $idParentDiv},{note:1,_id:0}).fetch();
+        var notes = Notes.find({participant: $idParticipant},{note:1,_id:0}).fetch();
         var notesArray = _.pluck(notes,'note');
         var average = notesArray.avg();
-        console.log('moyenne du participant N°'+$idParentDiv+' = '+average);
+        console.log('moyenne du participant N°'+$idParticipant+' = '+average);
 
-        var participantActif = Participants.findOne({participant: $idParentDiv})._id;
+        var selectedParticipant = Participants.findOne({participant: $idParticipant})._id;
         //update the average note of the participant in the participants collection
         console.log('update participant average note');
         Participants.update(
-            {_id: participantActif},
+            {_id: selectedParticipant},
             {$set: {
                 averageNote: average
             }

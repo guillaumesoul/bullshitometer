@@ -3,7 +3,7 @@ Participants = new Meteor.Collection('participants');
 Notes = new Meteor.Collection('notes');
 
 //Fonction retournant la moyenne d'un tableau d'élément
-Array.prototype.avg = function () {
+/*Array.prototype.avg = function () {
     var av = 0;
     var cnt = 0;
     var len = this.length;
@@ -16,7 +16,7 @@ Array.prototype.avg = function () {
         }
     }
     return av / cnt;
-};
+};*/
 
 /*Meteor.methods({
 
